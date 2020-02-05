@@ -22,7 +22,10 @@ private static int counter=0;
     private static void count(){
 
         for (int i = 0; i <1_000_000 ; i++) {
-            counter++;
+            inc();
         }
+    }
+    private static synchronized void inc(){   //sync your time 1 thread= 1 time | 2nd thread = 2 time (!||)
+        counter++;
     }
 }
